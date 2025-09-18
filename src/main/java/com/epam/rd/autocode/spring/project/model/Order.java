@@ -29,7 +29,7 @@ public class Order {
     private LocalDateTime orderDate;
     private BigDecimal price;
 
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "order")
     private List<BookItem> bookItems = new ArrayList<>();
 
     public Order() {}

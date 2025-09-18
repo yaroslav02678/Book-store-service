@@ -17,7 +17,7 @@ public class OrderDTO{
 
     public OrderDTO() {}
 
-    public OrderDTO(String v,
+    public OrderDTO(String clientEmail,
                     String employeeEmail,
                     LocalDateTime orderDate,
                     BigDecimal price,

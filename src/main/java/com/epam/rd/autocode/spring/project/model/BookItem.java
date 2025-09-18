@@ -1,8 +1,12 @@
 package com.epam.rd.autocode.spring.project.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 public class BookItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
