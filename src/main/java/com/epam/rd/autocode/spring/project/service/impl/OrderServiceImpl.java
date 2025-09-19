@@ -17,10 +17,10 @@ import java.util.stream.Collectors;
 @Service
 public class OrderServiceImpl implements OrderService {
 
-    private ClientRepository clientRepository;
-    private EmployeeRepository employeeRepository;
-    private OrderRepository orderRepository;
-    private BookRepository bookRepository;
+    private final ClientRepository clientRepository;
+    private final EmployeeRepository employeeRepository;
+    private final OrderRepository orderRepository;
+    private final BookRepository bookRepository;
 
     @Autowired
     public OrderServiceImpl(OrderRepository orderRepository,
@@ -35,50 +35,33 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public List<OrderDTO> getOrdersByClient(String clientEmail) {
-        List<Order> orders = orderRepository.findAllByClient_Email(clientEmail);
-        return orders.stream()
-                .map(order -> new OrderDTO(
-                        order.getClient().getEmail(),
-                        order.getEmployee().getEmail(),
-                        order.getOrderDate(),
-                        order.getPrice(),
-                        order.getBookItems().stream()
-                                .map(bi -> new BookItemDTO(bi.getBook().toString(), bi.getQuantity()))
-                                .collect(Collectors.toList())
-                )).collect(Collectors.toList());
+        return orderRepository.findAllByClient_Email(clientEmail).stream()
+                .map(this::mapToDTO)
+                .collect(Collectors.toList());
     }
 
     @Override
     public List<OrderDTO> getOrdersByEmployee(String employeeEmail) {
-        List<Order> orders = orderRepository.findAllByEmployee_Email(employeeEmail);
-
-        return orders.stream()
-                .map(order -> new OrderDTO(
-                        order.getClient().getEmail(),
-                        order.getEmployee().getEmail(),
-                        order.getOrderDate(),
-                        order.getPrice(),
-                        order.getBookItems().stream()
-                                .map(bi -> new BookItemDTO(bi.getBook().toString(), bi.getQuantity()))
-                                .collect(Collectors.toList())
-                )).collect(Collectors.toList());
+        return orderRepository.findAllByEmployee_Email(employeeEmail).stream()
+                .map(this::mapToDTO)
+                .collect(Collectors.toList());
     }
 
     @Override
-    public OrderDTO addOrder(OrderDTO order) {
+    public OrderDTO addOrder(OrderDTO orderDTO) {
         Order newOrder = new Order();
 
-        Client client = clientRepository.findClientByEmail(order.getClientEmail())
-                        .orElseThrow(() -> new RuntimeException("Client not found"));
-        Employee employee = employeeRepository.findEmployeeByEmail(order.getEmployeeEmail())
-                        .orElseThrow(() -> new RuntimeException("Employee not found"));
+        Client client = clientRepository.findClientByEmail(orderDTO.getClientEmail())
+                .orElseThrow(() -> new RuntimeException("Client not found"));
+        Employee employee = employeeRepository.findEmployeeByEmail(orderDTO.getEmployeeEmail())
+                .orElseThrow(() -> new RuntimeException("Employee not found"));
 
         newOrder.setClient(client);
         newOrder.setEmployee(employee);
-        newOrder.setOrderDate(order.getOrderDate());
-        newOrder.setPrice(order.getPrice());
+        newOrder.setOrderDate(orderDTO.getOrderDate());
+        newOrder.setPrice(orderDTO.getPrice());
 
-        List<BookItem> bookItems = order.getBookItems().stream()
+        List<BookItem> bookItems = orderDTO.getBookItems().stream()
                 .map(biDTO -> {
                     Book book = bookRepository.findBookByName(biDTO.getBookName())
                             .orElseThrow(() -> new RuntimeException("Book not found"));
@@ -91,8 +74,20 @@ public class OrderServiceImpl implements OrderService {
 
         newOrder.setBookItems(bookItems);
 
-        orderRepository.save(newOrder);
+        Order savedOrder = orderRepository.save(newOrder);
+        return mapToDTO(savedOrder);
+    }
 
-        return order;
+    private OrderDTO mapToDTO(Order order) {
+        return new OrderDTO(
+                order.getClient().getEmail(),
+                order.getEmployee().getEmail(),
+                order.getOrderDate(),
+                order.getPrice(),
+                order.getBookItems().stream()
+                        .map(bi -> new BookItemDTO(bi.getBook().getName(), bi.getQuantity()))
+                        .collect(Collectors.toList())
+        );
     }
 }
+
