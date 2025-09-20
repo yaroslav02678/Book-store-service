@@ -4,6 +4,7 @@ import com.epam.rd.autocode.spring.project.dto.EmployeeDTO;
 import com.epam.rd.autocode.spring.project.model.Employee;
 import com.epam.rd.autocode.spring.project.repo.EmployeeRepository;
 import com.epam.rd.autocode.spring.project.service.EmployeeService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,68 +14,51 @@ import java.util.stream.Collectors;
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
     private final EmployeeRepository employeeRepository;
+    private final ModelMapper modelMapper;
 
     @Autowired
-    public EmployeeServiceImpl(EmployeeRepository employeeRepository) {
+    public EmployeeServiceImpl(EmployeeRepository employeeRepository, ModelMapper modelMapper) {
         this.employeeRepository = employeeRepository;
+        this.modelMapper = modelMapper;
     }
 
     @Override
     public List<EmployeeDTO> getAllEmployees() {
         return employeeRepository.findAll().stream()
-                .map(this::mapToDTO)
+                .map(employee -> modelMapper.map(employee, EmployeeDTO.class))
                 .collect(Collectors.toList());
     }
 
     @Override
     public EmployeeDTO getEmployeeByEmail(String email) {
-        Employee employee = employeeRepository.findEmployeeByEmail(email)
+        Employee employee = employeeRepository.findByEmail(email)
                 .orElseThrow(() -> new RuntimeException("Employee not found"));
-        return mapToDTO(employee);
+        return modelMapper.map(employee, EmployeeDTO.class);
     }
 
     @Override
     public EmployeeDTO updateEmployeeByEmail(String email, EmployeeDTO employeeDTO) {
-        Employee employee = employeeRepository.findEmployeeByEmail(email)
+        Employee employee = employeeRepository.findByEmail(email)
                 .orElseThrow(() -> new RuntimeException("Employee not found"));
 
-        employee.setPassword(employeeDTO.getPassword());
-        employee.setName(employeeDTO.getName());
-        employee.setPhone(employeeDTO.getPhone());
-        employee.setBirthDate(employeeDTO.getBirthDate());
+        modelMapper.map(employeeDTO, employee);
 
         Employee updatedEmployee = employeeRepository.save(employee);
-        return mapToDTO(updatedEmployee);
+        return modelMapper.map(updatedEmployee, EmployeeDTO.class);
     }
 
     @Override
     public void deleteEmployeeByEmail(String email) {
-        Employee employee = employeeRepository.findEmployeeByEmail(email)
+        Employee employee = employeeRepository.findByEmail(email)
                 .orElseThrow(() -> new RuntimeException("Employee not found"));
         employeeRepository.delete(employee);
     }
 
     @Override
     public EmployeeDTO addEmployee(EmployeeDTO employeeDTO) {
-        Employee employee = new Employee();
-        employee.setEmail(employeeDTO.getEmail());
-        employee.setPassword(employeeDTO.getPassword());
-        employee.setName(employeeDTO.getName());
-        employee.setPhone(employeeDTO.getPhone());
-        employee.setBirthDate(employeeDTO.getBirthDate());
-
+        Employee employee = modelMapper.map(employeeDTO, Employee.class);
         Employee savedEmployee = employeeRepository.save(employee);
-        return mapToDTO(savedEmployee);
-    }
-
-    private EmployeeDTO mapToDTO(Employee employee) {
-        return new EmployeeDTO(
-                employee.getEmail(),
-                employee.getPassword(),
-                employee.getName(),
-                employee.getPhone(),
-                employee.getBirthDate()
-        );
+        return modelMapper.map(savedEmployee, EmployeeDTO.class);
     }
 }
 

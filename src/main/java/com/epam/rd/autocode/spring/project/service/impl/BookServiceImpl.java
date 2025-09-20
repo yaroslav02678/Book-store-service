@@ -4,95 +4,71 @@ import com.epam.rd.autocode.spring.project.dto.BookDTO;
 import com.epam.rd.autocode.spring.project.model.Book;
 import com.epam.rd.autocode.spring.project.repo.BookRepository;
 import com.epam.rd.autocode.spring.project.service.BookService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class BookServiceImpl implements BookService {
     private final BookRepository bookRepository;
+    private final ModelMapper modelMapper;
 
     @Autowired
-    public BookServiceImpl(BookRepository bookRepository) {
+    public BookServiceImpl(BookRepository bookRepository, ModelMapper modelMapper) {
         this.bookRepository = bookRepository;
+        this.modelMapper = modelMapper;
     }
 
     @Override
-    public List<BookDTO> getAllBooks() {
-        return bookRepository.findAll().stream()
-                .map(this::mapToDTO)
-                .collect(Collectors.toList());
+    public Page<BookDTO> getAllBooks(Pageable pageable) {
+        return bookRepository.findAll(pageable)
+                .map(book -> modelMapper.map(book, BookDTO.class));
     }
 
     @Override
     public BookDTO getBookByName(String name) {
-        Book book = bookRepository.findBookByName(name)
+        Book book = bookRepository.findByName(name)
                 .orElseThrow(() -> new RuntimeException("Book not found"));
-
-        return mapToDTO(book);
+        return modelMapper.map(book, BookDTO.class);
     }
 
     @Override
-    public BookDTO updateBookByName(String name, BookDTO bookDTO) {
-        Book book = bookRepository.findBookByName(name)
-                .orElseThrow(() -> new RuntimeException("Book not found"));
-
-        book.setName(bookDTO.getName());
-        book.setGenre(bookDTO.getGenre());
-        book.setAgeGroup(bookDTO.getAgeGroup());
-        book.setPrice(bookDTO.getPrice());
-        book.setPublicationDate(bookDTO.getPublicationDate());
-        book.setAuthor(bookDTO.getAuthor());
-        book.setPages(bookDTO.getPages());
-        book.setCharacteristics(bookDTO.getCharacteristics());
-        book.setDescription(bookDTO.getDescription());
-        book.setLanguage(bookDTO.getLanguage());
-
-        Book savedBook = bookRepository.save(book);
-        return mapToDTO(savedBook);
+    public Page<BookDTO> getBooksByAuthor(String author, Pageable pageable) {
+        return bookRepository.findByAuthor(author, pageable)
+                .map(book -> modelMapper.map(book, BookDTO.class));
     }
 
     @Override
-    public void deleteBookByName(String name) {
-        Book book = bookRepository.findBookByName(name)
-                .orElseThrow(() -> new RuntimeException("Book not found"));
-
-        bookRepository.delete(book);
+    public Page<BookDTO> getBooksByGenre(String genre, Pageable pageable) {
+        return bookRepository.findByGenre(genre, pageable)
+                .map(book -> modelMapper.map(book, BookDTO.class));
     }
 
     @Override
     public BookDTO addBook(BookDTO bookDTO) {
-        Book book = new Book();
-        book.setName(bookDTO.getName());
-        book.setGenre(bookDTO.getGenre());
-        book.setAgeGroup(bookDTO.getAgeGroup());
-        book.setPrice(bookDTO.getPrice());
-        book.setPublicationDate(bookDTO.getPublicationDate());
-        book.setAuthor(bookDTO.getAuthor());
-        book.setPages(bookDTO.getPages());
-        book.setCharacteristics(bookDTO.getCharacteristics());
-        book.setDescription(bookDTO.getDescription());
-        book.setLanguage(bookDTO.getLanguage());
-
+        Book book = modelMapper.map(bookDTO, Book.class);
         Book savedBook = bookRepository.save(book);
-        return mapToDTO(savedBook);
+        return modelMapper.map(savedBook, BookDTO.class);
     }
 
-    private BookDTO mapToDTO(Book book) {
-        return new BookDTO(
-                book.getName(),
-                book.getGenre(),
-                book.getAgeGroup(),
-                book.getPrice(),
-                book.getPublicationDate(),
-                book.getAuthor(),
-                book.getPages(),
-                book.getCharacteristics(),
-                book.getDescription(),
-                book.getLanguage()
-        );
+    @Override
+    public BookDTO updateBookByName(String name, BookDTO bookDTO) {
+        Book book = bookRepository.findByName(name)
+                .orElseThrow(() -> new RuntimeException("Book not found"));
+
+        modelMapper.map(bookDTO, book);
+
+        Book savedBook = bookRepository.save(book);
+        return modelMapper.map(savedBook, BookDTO.class);
+    }
+
+    @Override
+    public void deleteBookByName(String name) {
+        Book book = bookRepository.findByName(name)
+                .orElseThrow(() -> new RuntimeException("Book not found"));
+        bookRepository.delete(book);
     }
 }
 

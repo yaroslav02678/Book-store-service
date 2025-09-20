@@ -9,6 +9,8 @@ import java.time.LocalDate;
 
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class BookDTO{
     private String name;
     private String genre;
@@ -20,28 +22,4 @@ public class BookDTO{
     private String characteristics;
     private String description;
     private Language language;
-
-    public BookDTO() {}
-
-    public BookDTO(String name,
-                   String genre,
-                   AgeGroup ageGroup,
-                   BigDecimal price,
-                   LocalDate publicationDate,
-                   String author,
-                   Integer pages,
-                   String characteristics,
-                   String description,
-                   Language language) {
-        this.name = name;
-        this.genre = genre;
-        this.ageGroup = ageGroup;
-        this.price = price;
-        this.publicationDate = publicationDate;
-        this.author = author;
-        this.pages = pages;
-        this.characteristics = characteristics;
-        this.description = description;
-        this.language = language;
-    }
 }

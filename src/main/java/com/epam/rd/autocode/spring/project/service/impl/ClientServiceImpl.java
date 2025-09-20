@@ -4,6 +4,7 @@ import com.epam.rd.autocode.spring.project.dto.ClientDTO;
 import com.epam.rd.autocode.spring.project.model.Client;
 import com.epam.rd.autocode.spring.project.repo.ClientRepository;
 import com.epam.rd.autocode.spring.project.service.ClientService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,65 +14,51 @@ import java.util.stream.Collectors;
 @Service
 public class ClientServiceImpl implements ClientService {
     private final ClientRepository clientRepository;
+    private final ModelMapper modelMapper;
 
     @Autowired
-    public ClientServiceImpl(ClientRepository clientRepository) {
+    public ClientServiceImpl(ClientRepository clientRepository, ModelMapper modelMapper) {
         this.clientRepository = clientRepository;
+        this.modelMapper = modelMapper;
     }
 
     @Override
     public List<ClientDTO> getAllClients() {
         return clientRepository.findAll().stream()
-                .map(this::mapToDTO)
+                .map(client -> modelMapper.map(client, ClientDTO.class))
                 .collect(Collectors.toList());
     }
 
     @Override
     public ClientDTO getClientByEmail(String email) {
-        Client client = clientRepository.findClientByEmail(email)
+        Client client = clientRepository.findByEmail(email)
                 .orElseThrow(() -> new RuntimeException("Client not found"));
-        return mapToDTO(client);
+        return modelMapper.map(client, ClientDTO.class);
     }
 
     @Override
     public ClientDTO updateClientByEmail(String email, ClientDTO clientDTO) {
-        Client client = clientRepository.findClientByEmail(email)
+        Client client = clientRepository.findByEmail(email)
                 .orElseThrow(() -> new RuntimeException("Client not found"));
 
-        client.setPassword(clientDTO.getPassword());
-        client.setName(clientDTO.getName());
-        client.setBalance(clientDTO.getBalance());
+        modelMapper.map(clientDTO, client);
 
         Client updatedClient = clientRepository.save(client);
-        return mapToDTO(updatedClient);
+        return modelMapper.map(updatedClient, ClientDTO.class);
     }
 
     @Override
     public void deleteClientByEmail(String email) {
-        Client client = clientRepository.findClientByEmail(email)
+        Client client = clientRepository.findByEmail(email)
                 .orElseThrow(() -> new RuntimeException("Client not found"));
         clientRepository.delete(client);
     }
 
     @Override
     public ClientDTO addClient(ClientDTO clientDTO) {
-        Client client = new Client();
-        client.setEmail(clientDTO.getEmail());
-        client.setPassword(clientDTO.getPassword());
-        client.setName(clientDTO.getName());
-        client.setBalance(clientDTO.getBalance());
-
+        Client client = modelMapper.map(clientDTO, Client.class);
         Client savedClient = clientRepository.save(client);
-        return mapToDTO(savedClient);
-    }
-
-    private ClientDTO mapToDTO(Client client) {
-        return new ClientDTO(
-                client.getEmail(),
-                client.getPassword(),
-                client.getName(),
-                client.getBalance()
-        );
+        return modelMapper.map(savedClient, ClientDTO.class);
     }
 }
 
