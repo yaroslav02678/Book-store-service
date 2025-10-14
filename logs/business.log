@@ -1,0 +1,4 @@
+2025-10-15 00:31:41.744 [http-nio-8080-exec-1] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [BUSINESS EVENT] Початок: 'Перегляд списку книг'. Метод: BookController.books(..). Аргументи: [0, 6, name, asc, {}]
+2025-10-15 00:31:41.865 [http-nio-8080-exec-1] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [BUSINESS EVENT] Успішно: 'Перегляд списку книг'. Результат: books/book-list
+2025-10-15 00:31:45.088 [http-nio-8080-exec-5] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [BUSINESS EVENT] Початок: 'Перегляд списку книг'. Метод: BookController.books(..). Аргументи: [0, 6, name, asc, {}]
+2025-10-15 00:31:45.102 [http-nio-8080-exec-5] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [BUSINESS EVENT] Успішно: 'Перегляд списку книг'. Результат: books/book-list
