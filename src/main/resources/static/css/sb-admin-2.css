@@ -4024,6 +4024,7 @@ input[type="button"].btn-block {
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
+  font-size: 30px
 }
 
 .nav-link:hover, .nav-link:focus {
@@ -10155,7 +10156,8 @@ a:focus {
 .sidebar .nav-item .nav-link .badge-counter,
 .topbar .nav-item .nav-link .badge-counter {
   position: absolute;
-  transform: scale(0.7);
+  font-size: 1.3rem;
+  transform: scale(1);
   transform-origin: top right;
   right: .25rem;
   margin-top: -.25rem;
@@ -11278,4 +11280,8 @@ footer.sticky-footer .copyright {
 
 body.sidebar-toggled footer.sticky-footer {
   width: 100%;
+}
+
+#cartButton i {
+  font-size: 30px;
 }

@@ -1,50 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 
-    <property name="LOG_PATH" value="logs"/>
+    <!-- ===================================================================== -->
+    <!-- == Властивості (Properties)                                        == -->
+    <!-- ===================================================================== -->
+    <property name="LOGS_PATH" value="./logs" />
+    <property name="LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n" />
 
-    <!-- === Appenders === -->
-    <appender name="BUSINESS" class="ch.qos.logback.core.FileAppender">
-        <file>${LOG_PATH}/business.log</file>
-        <append>true</append>
+    <!-- ===================================================================== -->
+    <!-- == Апендери (Appenders) - Куди записувати логи                      == -->
+    <!-- ===================================================================== -->
+
+    <!-- 1. Апендер для виводу в консоль (для розробки) -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%-5level] [%thread] %logger{36} - %msg%n</pattern>
+            <pattern>${LOG_PATTERN}</pattern>
         </encoder>
     </appender>
 
-    <appender name="SECURITY" class="ch.qos.logback.core.FileAppender">
-        <file>${LOG_PATH}/security.log</file>
-        <append>true</append>
+    <!-- 2. Апендер для ЗАГАЛЬНОГО лог-файлу (app.log) -->
+    <!-- Сюди потрапить усе, що не має спеціального префіксу -->
+    <appender name="FILE-APP" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOGS_PATH}/app.log</file>
         <encoder>
-            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%-5level] [%thread] %logger{36} - %msg%n</pattern>
+            <pattern>${LOG_PATTERN}</pattern>
         </encoder>
+        <!-- ФІЛЬТР: Приймати повідомлення, ТІЛЬКИ ЯКЩО вони НЕ містять спеціальних префіксів -->
+        <filter class="ch.qos.logback.core.filter.EvaluatorFilter">
+            <evaluator class="ch.qos.logback.classic.boolex.JaninoEventEvaluator">
+                <expression>
+                    return !formattedMessage.contains("[BUSINESS EVENT]") &amp;&amp;
+                    !formattedMessage.contains("[SECURITY EVENT]") &amp;&amp;
+                    !formattedMessage.contains("[ERROR]");
+                </expression>
+            </evaluator>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${LOGS_PATH}/archived/app.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+            <maxFileSize>10MB</maxFileSize>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
     </appender>
 
-    <appender name="ERRORS" class="ch.qos.logback.core.FileAppender">
-        <file>${LOG_PATH}/errors.log</file>
-        <append>true</append>
+    <!-- 3. Апендер для файлу з помилками (error.log) -->
+    <appender name="FILE-ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOGS_PATH}/error.log</file>
         <encoder>
-            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%-5level] [%thread] %logger{36} - %msg%n</pattern>
+            <pattern>${LOG_PATTERN}</pattern>
         </encoder>
+        <!-- ФІЛЬТР: Приймати повідомлення, ТІЛЬКИ ЯКЩО вони містять префікс [ERROR] -->
+        <filter class="ch.qos.logback.core.filter.EvaluatorFilter">
+            <evaluator class="ch.qos.logback.classic.boolex.JaninoEventEvaluator">
+                <expression>return formattedMessage.contains("[ERROR]");</expression>
+            </evaluator>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${LOGS_PATH}/archived/error.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+            <maxFileSize>10MB</maxFileSize>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
     </appender>
 
-    <!-- === Loggers === -->
-    <logger name="BusinessLogger" level="INFO" additivity="false">
-        <appender-ref ref="BUSINESS"/>
-    </logger>
+    <!-- 4. Апендер для файлу безпеки (security.log) -->
+    <appender name="FILE-SECURITY" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOGS_PATH}/security.log</file>
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+        </encoder>
+        <!-- ФІЛЬТР: Приймати повідомлення, ТІЛЬКИ ЯКЩО вони містять префікс [SECURITY EVENT] -->
+        <filter class="ch.qos.logback.core.filter.EvaluatorFilter">
+            <evaluator class="ch.qos.logback.classic.boolex.JaninoEventEvaluator">
+                <expression>return formattedMessage.contains("[SECURITY EVENT]");</expression>
+            </evaluator>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${LOGS_PATH}/archived/security.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+            <maxFileSize>5MB</maxFileSize>
+            <maxHistory>90</maxHistory>
+            <totalSizeCap>500MB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
 
-    <logger name="SecurityLogger" level="INFO" additivity="false">
-        <appender-ref ref="SECURITY"/>
-    </logger>
+    <!-- 5. Апендер для файлу бізнес-подій (business.log) -->
+    <appender name="FILE-BUSINESS" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOGS_PATH}/business.log</file>
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+        </encoder>
+        <!-- ФІЛЬТР: Приймати повідомлення, ТІЛЬКИ ЯКЩО вони містять префікс [BUSINESS EVENT] -->
+        <filter class="ch.qos.logback.core.filter.EvaluatorFilter">
+            <evaluator class="ch.qos.logback.classic.boolex.JaninoEventEvaluator">
+                <expression>return formattedMessage.contains("[BUSINESS EVENT]");</expression>
+            </evaluator>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${LOGS_PATH}/archived/business.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+            <maxFileSize>10MB</maxFileSize>
+            <maxHistory>60</maxHistory>
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
 
-    <logger name="ErrorLogger" level="ERROR" additivity="false">
-        <appender-ref ref="ERRORS"/>
-    </logger>
-
-    <!-- === Root (console) === -->
+    <!-- ===================================================================== -->
+    <!-- == Кореневий логер (Root Logger)                                     == -->
+    <!-- ===================================================================== -->
     <root level="INFO">
-        <appender-ref ref="BUSINESS"/>
-        <appender-ref ref="SECURITY"/>
-        <appender-ref ref="ERRORS"/>
+        <!-- Надсилаємо всі повідомлення до всіх апендерів. Кожен з них сам вирішить, що приймати. -->
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="FILE-APP" />
+        <appender-ref ref="FILE-ERROR" />
+        <appender-ref ref="FILE-SECURITY" />
+        <appender-ref ref="FILE-BUSINESS" />
     </root>
 
 </configuration>

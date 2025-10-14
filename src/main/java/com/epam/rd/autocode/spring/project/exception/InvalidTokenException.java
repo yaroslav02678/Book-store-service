@@ -1,7 +1,13 @@
 package com.epam.rd.autocode.spring.project.exception;
 
+import lombok.Getter;
+
+@Getter
 public class InvalidTokenException extends RuntimeException {
-  public InvalidTokenException(String message) {
-    super(message);
-  }
+    private final Object[] args;
+
+    public InvalidTokenException(String messageKey, Object... args) {
+        super(messageKey);
+        this.args = args;
+    }
 }

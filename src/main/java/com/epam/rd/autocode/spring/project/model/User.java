@@ -1,5 +1,6 @@
 package com.epam.rd.autocode.spring.project.model;
 
+import com.epam.rd.autocode.spring.project.model.enums.Role;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
@@ -25,5 +26,9 @@ public abstract class User {
 
     @Column(name = "name")
     private String name;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role", nullable = false)
+    private Role role;
 }
 

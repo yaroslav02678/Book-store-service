@@ -1,6 +1,9 @@
 package com.epam.rd.autocode.spring.project.service.impl;
 
+import com.epam.rd.autocode.spring.project.aop.LoggableBusinessEvent;
 import com.epam.rd.autocode.spring.project.dto.BookDTO;
+import com.epam.rd.autocode.spring.project.exception.AlreadyExistException;
+import com.epam.rd.autocode.spring.project.exception.NotFoundException;
 import com.epam.rd.autocode.spring.project.model.Book;
 import com.epam.rd.autocode.spring.project.repo.BookRepository;
 import com.epam.rd.autocode.spring.project.service.BookService;
@@ -24,51 +27,54 @@ public class BookServiceImpl implements BookService {
     @Override
     public Page<BookDTO> getAllBooks(Pageable pageable) {
         return bookRepository.findAll(pageable)
-                .map(book -> modelMapper.map(book, BookDTO.class));
+                .map(book -> modelMapper.map(book, BookDTO.class)
+        );
     }
 
     @Override
-    public BookDTO getBookByName(String name) {
-        Book book = bookRepository.findByName(name)
-                .orElseThrow(() -> new RuntimeException("Book not found"));
+    public BookDTO getBookById(long id) {
+        Book book = bookRepository.findById(id)
+                .orElseThrow(() -> new NotFoundException("error.book.notFound", id));
         return modelMapper.map(book, BookDTO.class);
     }
 
     @Override
-    public Page<BookDTO> getBooksByAuthor(String author, Pageable pageable) {
-        return bookRepository.findByAuthor(author, pageable)
+    public Page<BookDTO> searchBooks(String keyword, Pageable pageable) {
+        return bookRepository.searchBooks(keyword, pageable)
                 .map(book -> modelMapper.map(book, BookDTO.class));
     }
 
     @Override
-    public Page<BookDTO> getBooksByGenre(String genre, Pageable pageable) {
-        return bookRepository.findByGenre(genre, pageable)
-                .map(book -> modelMapper.map(book, BookDTO.class));
-    }
-
-    @Override
-    public BookDTO addBook(BookDTO bookDTO) {
-        Book book = modelMapper.map(bookDTO, Book.class);
-        Book savedBook = bookRepository.save(book);
-        return modelMapper.map(savedBook, BookDTO.class);
-    }
-
-    @Override
-    public BookDTO updateBookByName(String name, BookDTO bookDTO) {
-        Book book = bookRepository.findByName(name)
-                .orElseThrow(() -> new RuntimeException("Book not found"));
+    @LoggableBusinessEvent("Оновлення книги за ID")
+    public BookDTO updateBookById(long id, BookDTO bookDTO) {
+        Book book = bookRepository.getBookById(id)
+                .orElseThrow(() -> new NotFoundException("error.book.notFound", id));
 
         modelMapper.map(bookDTO, book);
 
-        Book savedBook = bookRepository.save(book);
-        return modelMapper.map(savedBook, BookDTO.class);
+        bookRepository.save(book);
+        return modelMapper.map(book, BookDTO.class);
     }
 
     @Override
-    public void deleteBookByName(String name) {
-        Book book = bookRepository.findByName(name)
-                .orElseThrow(() -> new RuntimeException("Book not found"));
-        bookRepository.delete(book);
+    @LoggableBusinessEvent("Видалення книги за ID")
+    public void deleteBookById(long id) {
+        if (!bookRepository.existsById(id)) {
+            throw new NotFoundException("error.book.notFound", id);
+        }
+        bookRepository.deleteById(id);
+    }
+
+    @Override
+    @LoggableBusinessEvent("Додавання нової книги")
+    public BookDTO addBook(BookDTO bookDTO) {
+        if(bookRepository.existsByNameIgnoreCaseAndAuthorIgnoreCase(bookDTO.getName(), bookDTO.getAuthor())) {
+            throw new AlreadyExistException("error.book.alreadyExists", bookDTO.getName());
+        }
+
+        Book entity = modelMapper.map(bookDTO, Book.class);
+        Book savedEntity = bookRepository.save(entity);
+        return modelMapper.map(savedEntity, BookDTO.class);
     }
 }
 

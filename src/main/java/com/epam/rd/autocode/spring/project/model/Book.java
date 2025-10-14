@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -36,6 +37,7 @@ public class Book {
     @Column(name = "price")
     private BigDecimal price;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "publication_year")
     private LocalDate publicationDate;
 
@@ -54,4 +56,7 @@ public class Book {
     @Column(name = "language")
     @Enumerated(EnumType.STRING)
     private Language language;
+
+    @Column(name = "image_url")
+    private String imageUrl;
 }

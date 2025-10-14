@@ -1,37 +1,24 @@
-package com.epam.rd.autocode.spring.project.conf;
+package com.epam.rd.autocode.spring.project.security;
 
-import com.epam.rd.autocode.spring.project.security.JwtAuthenticationFilter;
-import com.epam.rd.autocode.spring.project.security.JwtUtils;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.oauth2.jwt.JwtDecoder;
-import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
-import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
-import org.springframework.security.oauth2.server.resource.authentication.JwtGrantedAuthoritiesConverter;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import javax.crypto.spec.SecretKeySpec;
-
-import static java.security.KeyRep.Type.SECRET;
-
 @Configuration
+@EnableMethodSecurity
 public class SecurityConfig {
-
-    private final JwtUtils jwtUtils;
-
-    public SecurityConfig(JwtUtils jwtUtils) {
-        this.jwtUtils = jwtUtils;
-    }
-
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    public SecurityFilterChain securityFilterChain(HttpSecurity http, JwtAuthenticationFilter jwtAuthenticationFilter) throws Exception {
         http
-//                .csrf(csrf -> csrf.disable())
+                .csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/auth/**",
@@ -51,22 +38,17 @@ public class SecurityConfig {
                                 "/books/add",
                                 "/books/edit/",
                                 "/orders/assign",
-                                "/orders/search")
+                                "/orders/search",
+                                "/clients/**",
+                                "employees/**")
                         .hasAnyRole("ADMIN")
                         .anyRequest().authenticated()
                 )
-                .formLogin(form -> form
-                        .loginPage("/auth/login")
-                        .loginProcessingUrl("/auth/login")
-                        .defaultSuccessUrl("/books", true)
-                        .permitAll()
-                )
-                .logout(logout -> logout
-                        .logoutUrl("/auth/logout")
-                        .logoutSuccessUrl("/auth/login?logout")
-                        .permitAll()
-                )
-                .addFilterBefore(new JwtAuthenticationFilter(jwtUtils), UsernamePasswordAuthenticationFilter.class);
+                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
+                .exceptionHandling(ex -> ex
+                        .authenticationEntryPoint((request, response, authException) -> response.sendError(HttpServletResponse.SC_BAD_REQUEST))
+                        .accessDeniedHandler((request, response, accessDeniedException) -> response.sendError(HttpServletResponse.SC_UNAUTHORIZED))
+                );
 
         return http.build();
     }
@@ -76,15 +58,9 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-//    @Bean
-//    public JwtAuthenticationConverter jwtAuthenticationConverter() {
-//        JwtGrantedAuthoritiesConverter grantedAuthoritiesConverter = new JwtGrantedAuthoritiesConverter();
-//        grantedAuthoritiesConverter.setAuthoritiesClaimName("role");
-//        grantedAuthoritiesConverter.setAuthorityPrefix("ROLE_");
-//
-//        JwtAuthenticationConverter authenticationConverter = new JwtAuthenticationConverter();
-//        authenticationConverter.setJwtGrantedAuthoritiesConverter(grantedAuthoritiesConverter);
-//        return authenticationConverter;
-//    }
+    @Bean
+    public JwtAuthenticationFilter jwtAuthenticationFilter(JwtUtils jwtUtils) {
+        return new JwtAuthenticationFilter(jwtUtils);
+    }
 }
 

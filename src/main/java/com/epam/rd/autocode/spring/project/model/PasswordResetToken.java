@@ -1,6 +1,5 @@
-package com.epam.rd.autocode.spring.project.security;
+package com.epam.rd.autocode.spring.project.model;
 
-import com.epam.rd.autocode.spring.project.model.Client;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;

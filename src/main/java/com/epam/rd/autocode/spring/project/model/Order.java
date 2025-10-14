@@ -1,5 +1,6 @@
 package com.epam.rd.autocode.spring.project.model;
 
+import com.epam.rd.autocode.spring.project.model.enums.OrderStatus;
 import jakarta.persistence.*;
 import lombok.*;
 import java.math.BigDecimal;
@@ -14,17 +15,16 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Order {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "order_id")
     private Long id;
 
-    @OneToOne(optional = false)
+    @ManyToOne(optional = false)
     @JoinColumn(name = "client_id", nullable = false)
     private Client client;
 
-    @OneToOne(optional = false)
+    @ManyToOne(optional = false)
     @JoinColumn(name = "employee_id", nullable = false)
     private Employee employee;
 
@@ -36,4 +36,7 @@ public class Order {
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<BookItem> bookItems = new ArrayList<>();
+
+    @Enumerated(EnumType.STRING)
+    private OrderStatus status;
 }

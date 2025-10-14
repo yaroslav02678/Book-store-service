@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{menu.editBook}">Edit Book</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div th:replace="~{fragments/navbar :: navbar}"></div>
+
+<div class="container mt-4">
+    <div class="mt-4"></div>
+
+    <form th:action="@{|/books/edit/${book.id}|}" th:object="${book}" method="post">
+        <!-- Name -->
+        <div class="mb-3">
+            <label for="name" class="form-label" th:text="#{book.name}">Name</label>
+            <input type="text" id="name" th:field="*{name}" class="form-control"/>
+            <div class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</div>
+        </div>
+
+        <!-- Genre -->
+        <div class="mb-3">
+            <label for="genre" class="form-label" th:text="#{book.genre}">Genre</label>
+            <input type="text" id="genre" th:field="*{genre}" class="form-control"/>
+            <div class="text-danger" th:if="${#fields.hasErrors('genre')}" th:errors="*{genre}">Genre error</div>
+        </div>
+
+        <!-- Author -->
+        <div class="mb-3">
+            <label for="author" class="form-label" th:text="#{book.author}">Author</label>
+            <input type="text" id="author" th:field="*{author}" class="form-control"/>
+            <div class="text-danger" th:if="${#fields.hasErrors('author')}" th:errors="*{author}">Author error</div>
+        </div>
+
+        <!-- Price -->
+        <div class="mb-3">
+            <label for="price" class="form-label" th:text="#{book.price}">Price</label>
+            <input type="number" step="0.01" id="price" th:field="*{price}" class="form-control"/>
+            <div class="text-danger" th:if="${#fields.hasErrors('price')}" th:errors="*{price}">Price error</div>
+        </div>
+
+        <!-- Age Group -->
+        <div class="mb-3">
+            <label for="ageGroup" class="form-label" th:text="#{book.ageGroup}">Age Group</label>
+            <select id="ageGroup" th:field="*{ageGroup}" class="form-select">
+                <option th:each="group : ${T(com.epam.rd.autocode.spring.project.model.enums.AgeGroup).values()}"
+                        th:value="${group}" th:text="${group}"></option>
+            </select>
+            <div class="text-danger" th:if="${#fields.hasErrors('ageGroup')}" th:errors="*{ageGroup}"></div>
+        </div>
+
+        <!-- Publication Date -->
+        <div class="mb-3">
+            <label for="publicationDate" class="form-label">Дата публікації</label>
+
+            <!-- Використовуємо type="date" -->
+            <input type="date"
+                   id="publicationDate"
+                   th:field="*{publicationDate}"
+                   class="form-control"
+                   lang="uk" />
+
+            <div class="text-danger"
+                 th:if="${#fields.hasErrors('publicationDate')}"
+                 th:errors="*{publicationDate}"></div>
+        </div>
+
+        <!-- Pages -->
+        <div class="mb-3">
+            <label for="pages" class="form-label" th:text="#{book.pages}">Pages</label>
+            <input type="number" id="pages" th:field="*{pages}" class="form-control"/>
+            <div class="text-danger" th:if="${#fields.hasErrors('pages')}" th:errors="*{pages}"></div>
+        </div>
+
+        <!-- Characteristics -->
+        <div class="mb-3">
+            <label for="characteristics" class="form-label" th:text="#{book.characteristics}">Characteristics</label>
+            <textarea id="characteristics" th:field="*{characteristics}" class="form-control"></textarea>
+            <div class="text-danger" th:if="${#fields.hasErrors('characteristics')}" th:errors="*{characteristics}"></div>
+        </div>
+
+        <!-- Description -->
+        <div class="mb-3">
+            <label for="description" class="form-label" th:text="#{book.description}">Description</label>
+            <textarea id="description" th:field="*{description}" class="form-control"></textarea>
+            <div class="text-danger" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></div>
+        </div>
+
+        <!-- Language -->
+        <div class="mb-3">
+            <label for="language" class="form-label" th:text="#{book.language}">Language</label>
+            <select id="language" th:field="*{language}" class="form-select">
+                <option th:each="lang : ${T(com.epam.rd.autocode.spring.project.model.enums.Language).values()}"
+                        th:value="${lang}" th:text="${lang}"></option>
+            </select>
+            <div class="text-danger" th:if="${#fields.hasErrors('language')}" th:errors="*{language}"></div>
+        </div>
+
+        <div class="mb-3">
+            <label for="imageUrl" class="form-label" th:text="#{book.imageUrl}">Image URL</label>
+            <input type="text" id="imageUrl" th:field="*{imageUrl}" class="form-control" placeholder="https://example.com/image.jpg"/>
+            <div class="text-danger" th:if="${#fields.hasErrors('imageUrl')}" th:errors="*{imageUrl}"></div>
+        </div>
+
+        <form th:action="@{|/books/edit/${book.id}|}" th:object="${book}" method="post">
+            <input type="hidden" name="page" th:value="${currentPage}" />
+            <input type="hidden" name="size" th:value="${pageSize}" />
+            <input type="hidden" name="sortField" th:value="${sortField}" />
+            <input type="hidden" name="sortDir" th:value="${sortDir}" />
+            <input type="hidden" name="q" th:value="${keyword}" />
+
+            <button type="submit" class="btn btn-primary" th:text="#{button.save}">Save</button>
+
+            <!-- Cancel з поверненням на правильну сторінку з фільтрами -->
+            <a th:href="${(keyword != null and keyword != '' and keyword != 'null')
+                  ? '/books/search?q=' + keyword + '&page=' + currentPage + '&size=' + pageSize + '&sortField=' + sortField + '&sortDir=' + sortDir
+                  : '/books?page=' + currentPage + '&size=' + pageSize + '&sortField=' + sortField + '&sortDir=' + sortDir}"
+               class="btn btn-secondary" th:text="#{button.cancel}">Cancel</a>
+        </form>
+
+    </form>
+
+</div>
+</body>
+</html>

@@ -1,5 +1,6 @@
 package com.epam.rd.autocode.spring.project.model;
 
+import com.epam.rd.autocode.spring.project.model.enums.Role;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
@@ -18,7 +19,7 @@ public class Client extends User {
     private BigDecimal balance;
 
     public Client(Long id, String email, String password, String name, BigDecimal balance) {
-        super(id, email, password, name);
+        super(id, email, password, name, Role.ROLE_CLIENT);
         this.balance = balance;
     }
 }

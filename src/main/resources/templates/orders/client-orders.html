@@ -10,8 +10,7 @@
 <div class="container mt-4">
     <div class="mt-4"></div>
 
-    <!-- Фільтри та сортування -->
-    <form th:action="@{/orders/my}" method="get" class="mb-3 d-flex flex-wrap align-items-center justify-content-between">
+    <form th:action="@{/orders/my/client}" method="get" class="mb-3 d-flex flex-wrap align-items-center justify-content-between">
         <div class="d-flex align-items-center gap-2">
             <label th:text="#{label.sortBy}" class="me-1">Sort by:</label>
             <select name="sortField" class="form-select" style="width:auto;">
@@ -39,12 +38,10 @@
         </div>
     </form>
 
-    <!-- Повідомлення про відсутність замовлень -->
     <div th:if="${#lists.isEmpty(orders.content)}">
         <div class="alert alert-info text-center">You don’t have any orders yet.</div>
     </div>
 
-    <!-- Таблиця замовлень -->
     <table class="table table-hover" th:if="${!#lists.isEmpty(orders.content)}">
         <thead>
         <tr>
@@ -52,6 +49,7 @@
             <th th:text="#{orders.column.total}">Сума</th>
             <th th:text="#{orders.column.status}">Статус</th>
             <th th:text="#{orders.column.date}">Створено</th>
+            <th th:text="#{orders.column.books}">Books</th>
             <th th:text="#{button.actions}">Дія</th>
         </tr>
         </thead>
@@ -62,9 +60,16 @@
             <td th:text="${order.status}"></td>
             <td th:text="${#temporals.format(order.orderDate, 'yyyy-MM-dd HH:mm')}"></td>
             <td>
-                <!-- Скасування замовлення -->
+                <ul class="list-unstyled mb-0">
+                    <li th:each="item : ${order.bookItems}">
+                        <span th:text="${item.bookName}">Book Title</span> -
+                        <span th:text="${item.quantity}">1</span>
+                    </li>
+                </ul>
+            </td>
+            <td>
                 <form th:if="${order.status.name() == 'NEW'}"
-                      th:action="@{'/orders/update/' + ${order.id}}" method="post">
+                      th:action="@{'/orders/cancel/' + ${order.id}}" method="post">
                     <input type="hidden" name="status" value="CANCELLED"/>
                     <button type="submit" class="btn btn-sm btn-danger">Cancel</button>
                 </form>
@@ -73,18 +78,17 @@
         </tbody>
     </table>
 
-    <!-- Пагінація -->
     <nav th:if="${orders.totalPages > 1}" class="d-flex justify-content-center mt-4">
         <ul class="pagination">
             <li class="page-item" th:classappend="${orders.first}? 'disabled'">
-                <a class="page-link" th:href="@{|/orders/my?page=${orders.number - 1}&size=${pageSize}&sortField=${sortField}&sortDir=${sortDir}|}" aria-label="Previous">&laquo;</a>
+                <a class="page-link" th:href="@{|/orders/my//client?page=${orders.number - 1}&size=${pageSize}&sortField=${sortField}&sortDir=${sortDir}|}" aria-label="Previous">&laquo;</a>
             </li>
             <li class="page-item" th:each="i : ${#numbers.sequence(0, orders.totalPages - 1)}"
                 th:classappend="${i == orders.number}? 'active'">
-                <a class="page-link" th:href="@{|/orders/my?page=${i}&size=${pageSize}&sortField=${sortField}&sortDir=${sortDir}|}" th:text="${i + 1}">1</a>
+                <a class="page-link" th:href="@{|/orders/my/client?page=${i}&size=${pageSize}&sortField=${sortField}&sortDir=${sortDir}|}" th:text="${i + 1}">1</a>
             </li>
             <li class="page-item" th:classappend="${orders.last}? 'disabled'">
-                <a class="page-link" th:href="@{|/orders/my?page=${orders.number + 1}&size=${pageSize}&sortField=${sortField}&sortDir=${sortDir}|}" aria-label="Next">&raquo;</a>
+                <a class="page-link" th:href="@{|/orders/my/client?page=${orders.number + 1}&size=${pageSize}&sortField=${sortField}&sortDir=${sortDir}|}" aria-label="Next">&raquo;</a>
             </li>
         </ul>
     </nav>
