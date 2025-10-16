@@ -151,4 +151,42 @@
 
 </div>
 </body>
+<div class="chat-window position-fixed bottom-0 end-0 m-4 shadow-lg border rounded bg-white"
+     style="width: 350px; z-index: 1050;">
+    <div class="p-2 bg-primary text-white rounded-top">
+        <button class="btn btn-sm btn-light float-end" id="toggleChat">_</button>
+    </div>
+    <div id="chatBody" class="p-3" style="max-height: 300px; overflow-y: auto;">
+        <div th:if="${userMessage}" class="text-end mb-2">
+        <span class="badge bg-primary" th:text="${userMessage}"
+              style="white-space: pre-wrap; word-break: break-word;"></span>
+        </div>
+        <div th:if="${assistantAnswer}" class="text-start mb-2">
+        <span class="badge bg-secondary" th:text="${assistantAnswer}"
+              style="white-space: pre-wrap; word-break: break-word;"></span>
+        </div>
+    </div>
+
+    <form th:action="@{/ask}" method="post" class="p-2 border-top d-flex">
+        <input type="text" name="message" class="form-control form-control-sm me-2" placeholder="Напиши запит..." required>
+        <input type="hidden" name="sortField" th:value="${sortField}" />
+        <input type="hidden" name="sortDir" th:value="${sortDir}" />
+        <input type="hidden" name="size" th:value="${pageSize}" />
+        <input type="hidden" name="page" th:value="${currentPage}" />
+        <button type="submit" class="btn btn-sm btn-primary">➤</button>
+    </form>
+
+</div>
+
+<script>
+    document.getElementById("toggleChat").addEventListener("click", function () {
+        const chatBody = document.getElementById("chatBody");
+        if (chatBody.style.display === "none") {
+            chatBody.style.display = "block";
+        } else {
+            chatBody.style.display = "none";
+        }
+    });
+</script>
+
 </html>

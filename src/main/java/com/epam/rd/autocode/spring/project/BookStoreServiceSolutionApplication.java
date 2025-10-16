@@ -33,6 +33,7 @@ public class BookStoreServiceSolutionApplication {
         System.setProperty("MAIL_PASSWORD", dotenv.get("MAIL_PASSWORD"));
         System.setProperty("MAIL_SMTP_AUTH", dotenv.get("MAIL_SMTP_AUTH"));
         System.setProperty("MAIL_STARTTLS_ENABLE", dotenv.get("MAIL_STARTTLS_ENABLE"));
+        System.setProperty("YOUR_GEMINI_API_KEY_HERE", dotenv.get("YOUR_GEMINI_API_KEY_HERE"));
 
         SpringApplication.run(BookStoreServiceSolutionApplication.class, args);
     }

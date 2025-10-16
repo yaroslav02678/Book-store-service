@@ -19,21 +19,21 @@ public class ClientController {
         this.clientService = clientService;
     }
 
-    @GetMapping()
-    @PreAuthorize("hasAnyRole('ADMIN')")
-    public String getAllClients(@RequestParam(defaultValue = "0") int pages,
-                                @RequestParam(defaultValue = "10") int size,
-                                Model model) {
-        model.addAttribute("clients", clientService.getAllClients(PageRequest.of(pages, size)));
-        return "clients/list";
-    }
+//    @GetMapping()
+//    @PreAuthorize("hasAnyRole('ADMIN')")
+//    public String getAllClients(@RequestParam(defaultValue = "0") int pages,
+//                                @RequestParam(defaultValue = "10") int size,
+//                                Model model) {
+//        model.addAttribute("clients", clientService.getAllClients(PageRequest.of(pages, size)));
+//        return "clients/list";
+//    }
 
-    @GetMapping("/{id}")
-    @PreAuthorize("hasAnyRole('ADMIN')")
-    public String getClient(@PathVariable Long id, Model model) {
-        model.addAttribute("client", clientService.getClientById(id));
-        return "clients/detail-by-email";
-    }
+//    @GetMapping("/{id}")
+//    @PreAuthorize("hasAnyRole('ADMIN')")
+//    public String getClient(@PathVariable Long id, Model model) {
+//        model.addAttribute("client", clientService.getClientById(id));
+//        return "clients/detail-by-email";
+//    }
 
     @PostMapping("/add")
     @PreAuthorize("hasAnyRole('ADMIN')")

@@ -1,133 +1,509 @@
-2025-10-14 00:48:43.659 [http-nio-8080-exec-5] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client2@example.com
-2025-10-14 00:48:43.659 [http-nio-8080-exec-5] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
-2025-10-14 14:18:24.032 [http-nio-8080-exec-5] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Вихід користувача з системи'. Контекст: [користувач=2, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.logout(..)
-2025-10-14 14:18:34.420 [http-nio-8080-exec-10] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: admin@email.com
-2025-10-14 14:18:34.420 [http-nio-8080-exec-10] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
-2025-10-14 14:19:58.857 [http-nio-8080-exec-1] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Вихід користувача з системи'. Контекст: [користувач=11, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.logout(..)
-2025-10-14 14:27:12.265 [http-nio-8080-exec-3] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client2@example.com
-2025-10-14 14:27:12.267 [http-nio-8080-exec-3] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
-2025-10-14 14:28:38.175 [http-nio-8080-exec-1] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Вихід користувача з системи'. Контекст: [користувач=2, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.logout(..)
-2025-10-14 14:28:46.812 [http-nio-8080-exec-6] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@email.com
-2025-10-14 14:28:46.812 [http-nio-8080-exec-6] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
-2025-10-14 14:29:05.733 [http-nio-8080-exec-8] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Вихід користувача з системи'. Контекст: [користувач=1, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.logout(..)
-2025-10-14 14:29:11.583 [http-nio-8080-exec-3] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: admin@email.com
-2025-10-14 14:29:11.583 [http-nio-8080-exec-3] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
-2025-10-14 14:29:13.802 [http-nio-8080-exec-6] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=11, ip=0:0:0:0:0:0:0:1]. Метод: OrderController.getAllOrders(..)
-2025-10-14 14:29:16.258 [http-nio-8080-exec-9] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=11, ip=0:0:0:0:0:0:0:1]. Метод: OrderController.getAllOrders(..)
-2025-10-14 14:30:38.400 [http-nio-8080-exec-6] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=11, ip=0:0:0:0:0:0:0:1]. Метод: OrderController.getAllOrders(..)
-2025-10-14 14:30:43.564 [http-nio-8080-exec-8] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Вихід користувача з системи'. Контекст: [користувач=11, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.logout(..)
-2025-10-14 14:30:50.347 [http-nio-8080-exec-3] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@email.com
-2025-10-14 14:30:50.347 [http-nio-8080-exec-3] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
-2025-10-14 14:31:00.993 [http-nio-8080-exec-7] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Вихід користувача з системи'. Контекст: [користувач=1, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.logout(..)
-2025-10-14 14:31:07.307 [http-nio-8080-exec-2] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client2@example.com
-2025-10-14 14:31:07.307 [http-nio-8080-exec-2] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
-2025-10-14 14:31:29.316 [http-nio-8080-exec-7] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Вихід користувача з системи'. Контекст: [користувач=2, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.logout(..)
-2025-10-14 14:31:35.435 [http-nio-8080-exec-2] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client2@example.com
-2025-10-14 14:31:35.435 [http-nio-8080-exec-2] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
-2025-10-14 14:31:39.652 [http-nio-8080-exec-6] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Запит на відновлення паролю'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.processForgotPassword(..)
-2025-10-14 14:31:46.221 [http-nio-8080-exec-1] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Запит на відновлення паролю'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.processForgotPassword(..)
-2025-10-14 14:32:10.003 [http-nio-8080-exec-4] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Запит на відновлення паролю'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.processForgotPassword(..)
-2025-10-14 14:32:21.897 [http-nio-8080-exec-7] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Завершення процедури скидання паролю'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.processResetPassword(..)
-2025-10-14 14:33:17.923 [http-nio-8080-exec-2] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Реєстрація нового клієнта'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: RegistrationServiceImpl.registerClient(..)
-2025-10-14 14:33:35.412 [http-nio-8080-exec-5] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client13@example.com
-2025-10-14 14:33:35.412 [http-nio-8080-exec-5] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
-2025-10-14 14:38:42.854 [http-nio-8080-exec-9] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Вихід користувача з системи'. Контекст: [користувач=20, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.logout(..)
-2025-10-14 14:38:57.372 [http-nio-8080-exec-6] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Запит на відновлення паролю'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.processForgotPassword(..)
-2025-10-14 15:03:46.424 [http-nio-8080-exec-7] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client12@example.com
-2025-10-14 15:03:46.424 [http-nio-8080-exec-7] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
-2025-10-14 16:57:34.351 [http-nio-8080-exec-8] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Вихід користувача з системи'. Контекст: [користувач=19, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.logout(..)
-2025-10-14 16:57:43.390 [http-nio-8080-exec-2] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: admin@email.com
-2025-10-14 16:57:43.390 [http-nio-8080-exec-2] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
-2025-10-14 16:57:46.793 [http-nio-8080-exec-7] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=11, ip=0:0:0:0:0:0:0:1]. Метод: OrderController.getAllOrders(..)
-2025-10-14 16:57:50.661 [http-nio-8080-exec-5] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=11, ip=0:0:0:0:0:0:0:1]. Метод: OrderController.getAllOrders(..)
-2025-10-14 16:57:54.113 [http-nio-8080-exec-1] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=11, ip=0:0:0:0:0:0:0:1]. Метод: OrderController.getAllOrders(..)
-2025-10-14 16:57:55.997 [http-nio-8080-exec-4] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=11, ip=0:0:0:0:0:0:0:1]. Метод: OrderController.getAllOrders(..)
-2025-10-14 16:57:59.677 [http-nio-8080-exec-6] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Вихід користувача з системи'. Контекст: [користувач=11, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.logout(..)
-2025-10-14 16:58:09.416 [http-nio-8080-exec-1] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@email.com
-2025-10-14 16:58:09.416 [http-nio-8080-exec-1] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
-2025-10-14 16:58:18.887 [http-nio-8080-exec-3] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Вихід користувача з системи'. Контекст: [користувач=1, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.logout(..)
-2025-10-14 16:58:28.634 [http-nio-8080-exec-5] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
-2025-10-14 16:58:28.634 [http-nio-8080-exec-5] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
-2025-10-14 16:59:01.565 [http-nio-8080-exec-10] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client12@example.com
-2025-10-14 16:59:01.566 [http-nio-8080-exec-10] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
-2025-10-14 16:59:07.246 [http-nio-8080-exec-5] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Вихід користувача з системи'. Контекст: [користувач=19, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.logout(..)
-2025-10-14 17:02:30.845 [http-nio-8080-exec-4] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
-2025-10-14 17:02:30.845 [http-nio-8080-exec-4] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
-2025-10-14 17:02:43.001 [http-nio-8080-exec-2] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Вихід користувача з системи'. Контекст: [користувач=1, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.logout(..)
-2025-10-14 17:02:50.978 [http-nio-8080-exec-8] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@email.com
-2025-10-14 17:02:50.978 [http-nio-8080-exec-8] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
-2025-10-14 17:03:13.240 [http-nio-8080-exec-2] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Вихід користувача з системи'. Контекст: [користувач=1, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.logout(..)
-2025-10-14 17:03:21.685 [http-nio-8080-exec-8] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: admin@email.com
-2025-10-14 17:03:21.685 [http-nio-8080-exec-8] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
-2025-10-14 17:07:33.305 [http-nio-8080-exec-2] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=11, ip=0:0:0:0:0:0:0:1]. Метод: OrderController.getAllOrders(..)
-2025-10-14 17:07:35.773 [http-nio-8080-exec-6] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Вихід користувача з системи'. Контекст: [користувач=11, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.logout(..)
-2025-10-14 17:49:51.544 [http-nio-8080-exec-3] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: admin@email.com
-2025-10-14 17:49:51.546 [http-nio-8080-exec-3] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
-2025-10-14 17:50:01.890 [http-nio-8080-exec-7] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Вихід користувача з системи'. Контекст: [користувач=11, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.logout(..)
-2025-10-14 17:50:07.314 [http-nio-8080-exec-2] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: admin@email.com
-2025-10-14 17:50:07.315 [http-nio-8080-exec-2] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
-2025-10-14 17:51:03.785 [http-nio-8080-exec-3] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Вихід користувача з системи'. Контекст: [користувач=11, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.logout(..)
-2025-10-14 17:51:09.754 [http-nio-8080-exec-8] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: admin@email.com
-2025-10-14 17:51:09.760 [http-nio-8080-exec-8] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
-2025-10-14 17:52:57.943 [http-nio-8080-exec-6] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=11, ip=0:0:0:0:0:0:0:1]. Метод: OrderController.getAllOrders(..)
-2025-10-14 17:57:22.413 [http-nio-8080-exec-4] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Вихід користувача з системи'. Контекст: [користувач=11, ip=127.0.0.1]. Метод: AuthController.logout(..)
-2025-10-14 17:57:29.216 [http-nio-8080-exec-8] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: admin@email.com
-2025-10-14 17:57:29.217 [http-nio-8080-exec-8] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
-2025-10-14 17:57:46.112 [http-nio-8080-exec-7] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: admin@email.com
-2025-10-14 17:57:46.112 [http-nio-8080-exec-7] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
-2025-10-14 17:58:41.285 [http-nio-8080-exec-9] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: admin@email.com
-2025-10-14 17:58:41.287 [http-nio-8080-exec-9] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
-2025-10-14 18:02:38.811 [http-nio-8080-exec-3] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: admin@email.com
-2025-10-14 18:02:38.818 [http-nio-8080-exec-3] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
-2025-10-14 18:15:21.572 [http-nio-8080-exec-5] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
-2025-10-14 18:15:21.572 [http-nio-8080-exec-5] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
-2025-10-14 18:15:37.994 [http-nio-8080-exec-10] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Вихід користувача з системи'. Контекст: [користувач=1, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.logout(..)
-2025-10-14 18:15:42.886 [http-nio-8080-exec-5] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: admin@email.com
-2025-10-14 18:15:42.887 [http-nio-8080-exec-5] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
-2025-10-14 18:15:46.082 [http-nio-8080-exec-8] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=11, ip=0:0:0:0:0:0:0:1]. Метод: OrderController.getAllOrders(..)
-2025-10-14 18:15:48.888 [http-nio-8080-exec-1] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=11, ip=0:0:0:0:0:0:0:1]. Метод: OrderController.getAllOrders(..)
-2025-10-14 18:15:50.277 [http-nio-8080-exec-4] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=11, ip=0:0:0:0:0:0:0:1]. Метод: OrderController.getAllOrders(..)
-2025-10-14 18:15:52.485 [http-nio-8080-exec-6] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Вихід користувача з системи'. Контекст: [користувач=11, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.logout(..)
-2025-10-14 18:16:01.475 [http-nio-8080-exec-1] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@email.com
-2025-10-14 18:16:01.475 [http-nio-8080-exec-1] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
-2025-10-14 18:16:07.505 [http-nio-8080-exec-9] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Вихід користувача з системи'. Контекст: [користувач=1, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.logout(..)
-2025-10-14 18:16:17.197 [http-nio-8080-exec-4] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
-2025-10-14 18:16:17.198 [http-nio-8080-exec-4] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
-2025-10-14 18:17:00.318 [http-nio-8080-exec-6] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Вихід користувача з системи'. Контекст: [користувач=1, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.logout(..)
-2025-10-14 18:17:10.526 [http-nio-8080-exec-1] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: admin@email.com
-2025-10-14 18:17:10.526 [http-nio-8080-exec-1] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
-2025-10-14 18:20:06.974 [http-nio-8080-exec-6] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Вихід користувача з системи'. Контекст: [користувач=11, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.logout(..)
-2025-10-14 18:20:13.204 [http-nio-8080-exec-3] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Запит на відновлення паролю'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.processForgotPassword(..)
-2025-10-14 18:20:17.300 [http-nio-8080-exec-8] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Запит на відновлення паролю'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.processForgotPassword(..)
-2025-10-14 18:25:24.681 [http-nio-8080-exec-7] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
-2025-10-14 18:25:24.682 [http-nio-8080-exec-7] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
-2025-10-14 18:26:03.175 [http-nio-8080-exec-2] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Вихід користувача з системи'. Контекст: [користувач=1, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.logout(..)
-2025-10-14 18:28:13.014 [http-nio-8080-exec-3] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: admin@email.com
-2025-10-14 18:28:13.031 [http-nio-8080-exec-3] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
-2025-10-14 18:28:22.168 [http-nio-8080-exec-7] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Вихід користувача з системи'. Контекст: [користувач=11, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.logout(..)
-2025-10-14 18:28:27.500 [http-nio-8080-exec-1] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client2@example.com
-2025-10-14 18:28:27.501 [http-nio-8080-exec-1] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
-2025-10-14 18:28:29.840 [http-nio-8080-exec-4] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Вихід користувача з системи'. Контекст: [користувач=2, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.logout(..)
-2025-10-14 19:32:13.744 [http-nio-8080-exec-7] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
-2025-10-14 19:32:13.745 [http-nio-8080-exec-7] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
-2025-10-14 19:32:48.262 [http-nio-8080-exec-10] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Вихід користувача з системи'. Контекст: [користувач=1, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.logout(..)
-2025-10-14 19:32:54.061 [http-nio-8080-exec-5] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: admin@email.com
-2025-10-14 19:32:54.061 [http-nio-8080-exec-5] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
-2025-10-14 19:33:01.289 [http-nio-8080-exec-7] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: admin@email.com
-2025-10-14 19:33:01.290 [http-nio-8080-exec-7] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
-2025-10-14 19:33:03.414 [http-nio-8080-exec-10] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=11, ip=0:0:0:0:0:0:0:1]. Метод: OrderController.getAllOrders(..)
-2025-10-14 19:33:07.566 [http-nio-8080-exec-3] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=11, ip=0:0:0:0:0:0:0:1]. Метод: OrderController.getAllOrders(..)
-2025-10-14 19:33:10.481 [http-nio-8080-exec-6] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=11, ip=0:0:0:0:0:0:0:1]. Метод: OrderController.getAllOrders(..)
-2025-10-14 19:33:13.513 [http-nio-8080-exec-8] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Вихід користувача з системи'. Контекст: [користувач=11, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.logout(..)
-2025-10-14 19:33:21.128 [http-nio-8080-exec-3] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@email.com
-2025-10-14 19:33:21.128 [http-nio-8080-exec-3] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
-2025-10-14 19:33:37.999 [http-nio-8080-exec-1] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Вихід користувача з системи'. Контекст: [користувач=1, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.logout(..)
-2025-10-14 19:33:49.416 [http-nio-8080-exec-6] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@email.com
-2025-10-14 19:33:49.416 [http-nio-8080-exec-6] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
-2025-10-14 19:36:11.584 [http-nio-8080-exec-6] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Вихід користувача з системи'. Контекст: [користувач=1, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.logout(..)
-2025-10-14 19:36:24.058 [http-nio-8080-exec-1] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
-2025-10-14 19:36:24.058 [http-nio-8080-exec-1] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
-2025-10-14 19:36:48.075 [http-nio-8080-exec-9] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Вихід користувача з системи'. Контекст: [користувач=1, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.logout(..)
-2025-10-14 19:36:56.841 [http-nio-8080-exec-6] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Запит на відновлення паролю'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.processForgotPassword(..)
-2025-10-14 19:37:03.946 [http-nio-8080-exec-9] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Завершення процедури скидання паролю'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.processResetPassword(..)
-2025-10-14 19:37:52.022 [http-nio-8080-exec-5] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Запит на відновлення паролю'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.processForgotPassword(..)
+2025-10-16 00:12:18.108 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=user, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 00:12:18.153 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=user, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 00:17:37.724 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=user, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 00:17:37.783 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=user, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 00:21:16.730 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 00:21:16.743 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 00:24:40.027 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 00:24:40.050 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 10:25:28.602 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 10:25:28.623 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 10:31:18.055 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 10:31:18.088 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 10:32:51.441 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 10:32:51.467 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 10:37:01.696 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 10:37:01.719 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 11:00:31.007 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 11:00:31.827 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 11:00:31.862 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 11:00:31.912 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 11:00:31.941 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 11:00:46.204 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 11:00:46.222 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 11:06:53.116 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 11:06:53.933 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 11:06:53.958 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 11:06:54.014 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 11:06:54.037 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 11:07:08.526 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 11:07:08.544 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 11:13:06.178 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 11:13:07.054 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 11:13:07.093 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 11:13:07.173 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 11:13:07.200 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 11:13:27.522 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 11:13:27.543 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 11:17:18.456 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 11:17:19.282 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 11:17:19.318 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 11:17:19.377 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 11:17:19.397 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 11:17:33.518 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 11:17:33.536 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 11:41:15.709 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 11:41:16.538 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 11:41:16.559 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 11:41:16.609 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 11:41:16.632 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 11:41:30.876 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 11:41:30.893 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 11:43:59.281 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 11:44:00.719 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 11:44:00.775 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 11:44:00.863 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 11:44:00.892 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 11:44:20.632 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 11:44:20.657 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 11:47:47.353 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 11:47:48.419 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 11:47:48.442 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 11:47:48.491 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 11:47:48.507 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 11:48:04.046 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 11:48:04.063 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 11:48:56.928 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 11:48:58.299 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 11:48:58.330 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 11:48:58.388 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 11:48:58.408 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 11:49:13.771 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 11:49:13.798 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 11:51:34.414 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 11:51:35.255 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 11:51:35.278 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 11:51:35.322 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 11:51:35.343 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 11:51:50.165 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 11:51:50.186 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 11:58:26.897 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 11:58:27.677 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 11:58:27.708 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 11:58:27.742 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 11:58:27.773 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 11:58:41.845 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 11:58:41.863 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 12:01:30.550 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 12:01:31.336 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 12:01:31.379 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 12:01:31.421 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 12:01:31.450 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 12:01:46.391 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 12:01:46.409 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 12:07:04.361 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 12:07:05.271 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 12:07:05.323 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 12:07:05.360 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 12:07:05.409 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 12:07:20.071 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 12:07:20.090 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 12:08:54.804 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 12:08:55.648 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 12:08:55.680 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 12:08:55.730 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 12:08:55.768 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 12:09:11.548 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 12:09:11.565 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 12:14:15.263 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 12:14:16.025 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 12:14:16.064 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 12:14:16.095 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 12:14:16.144 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 12:14:30.541 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 12:14:30.559 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 12:17:00.924 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 12:17:01.700 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 12:17:01.735 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 12:17:01.773 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 12:17:01.811 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 12:17:16.239 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 12:17:16.259 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 12:20:50.819 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 12:20:51.615 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 12:20:51.654 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 12:20:51.692 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 12:20:51.724 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 12:21:05.135 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 12:21:05.154 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 12:23:28.097 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 12:23:29.271 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 12:23:29.316 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 12:23:29.369 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 12:23:29.426 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 12:23:47.450 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 12:23:47.465 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 12:25:33.101 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 12:25:33.944 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 12:25:33.975 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 12:25:34.024 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 12:25:34.057 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 12:25:48.608 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 12:25:48.625 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 12:28:11.621 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 12:28:12.526 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 12:28:12.557 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 12:28:12.592 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 12:28:12.636 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 12:28:27.330 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 12:28:27.360 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 12:31:28.514 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 12:31:29.315 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 12:31:29.340 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 12:31:29.391 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 12:31:29.422 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 12:31:48.483 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 12:31:48.498 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 12:32:38.165 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 12:32:39.000 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 12:32:39.031 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 12:32:39.074 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 12:32:39.112 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 12:32:53.569 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 12:32:53.588 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 12:35:11.778 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 12:35:12.586 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 12:35:12.623 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 12:35:12.666 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 12:35:12.702 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 12:35:27.121 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 12:35:27.144 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 12:36:19.990 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 12:36:20.745 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 12:36:20.775 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 12:36:20.826 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 12:36:20.860 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 12:36:35.409 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 12:36:35.426 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 13:08:02.623 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 13:08:03.451 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 13:08:03.491 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 13:08:03.520 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 13:08:03.563 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 13:08:18.763 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 13:08:18.785 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 13:09:49.312 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 13:09:50.154 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 13:09:50.185 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 13:09:50.237 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 13:09:50.266 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 13:10:04.165 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 13:10:04.186 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 13:19:01.416 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 13:19:02.186 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 13:19:02.236 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 13:19:02.277 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 13:19:02.348 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 13:19:16.572 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 13:19:16.589 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 13:23:03.616 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 13:23:04.381 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 13:23:04.415 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 13:23:04.459 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 13:23:04.487 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 13:23:19.446 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 13:23:19.467 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 13:23:46.163 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 13:23:46.960 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 13:23:46.991 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 13:23:47.038 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 13:23:47.073 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 13:24:01.216 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 13:24:01.238 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 13:27:32.270 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 13:27:33.062 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 13:27:33.103 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 13:27:33.143 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 13:27:33.191 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 13:27:47.031 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 13:27:47.062 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 13:28:47.042 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 13:28:47.823 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 13:28:47.855 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 13:28:47.906 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 13:28:47.953 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 13:29:04.758 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 13:29:04.791 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 13:30:57.472 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 13:30:58.265 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 13:30:58.297 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 13:30:58.350 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 13:30:58.460 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 13:31:12.819 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 13:31:12.839 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 13:44:01.456 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 13:44:02.260 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 13:44:02.307 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 13:44:02.349 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 13:44:02.436 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 13:44:16.379 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 13:44:16.395 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 13:46:01.499 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 13:46:02.290 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 13:46:02.336 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 13:46:02.377 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 13:46:02.470 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 13:46:16.646 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 13:46:16.663 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 13:47:06.428 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 13:47:07.288 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 13:47:07.324 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 13:47:07.365 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 13:47:07.462 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 13:47:22.193 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 13:47:22.220 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 13:48:40.899 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 13:48:41.703 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 13:48:41.730 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 13:48:41.788 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 13:48:41.890 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 13:48:57.170 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 13:48:57.211 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 13:49:46.457 [http-nio-8080-exec-4] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: admin@email.com
+2025-10-16 13:49:46.458 [http-nio-8080-exec-4] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
+2025-10-16 13:49:49.288 [http-nio-8080-exec-1] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=11, ip=0:0:0:0:0:0:0:1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 13:49:51.869 [http-nio-8080-exec-8] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=11, ip=0:0:0:0:0:0:0:1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 13:49:54.813 [http-nio-8080-exec-6] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Вихід користувача з системи'. Контекст: [користувач=11, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.logout(..)
+2025-10-16 13:51:14.545 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 13:51:15.394 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 13:51:15.431 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 13:51:15.469 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 13:51:15.563 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 13:51:29.787 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 13:51:29.814 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 13:52:17.426 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 13:52:18.235 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 13:52:18.282 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 13:52:18.307 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 13:52:18.402 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 13:52:32.151 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 13:52:32.177 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 13:54:26.133 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 13:54:26.959 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 13:54:26.990 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 13:54:27.040 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 13:54:27.134 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 13:54:41.526 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 13:54:41.548 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 13:59:41.579 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 13:59:42.358 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 13:59:42.383 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 13:59:42.426 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 13:59:42.513 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 13:59:56.794 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 13:59:56.815 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:03:03.601 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:03:04.397 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 14:03:04.435 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 14:03:04.481 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:03:04.563 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 14:03:18.525 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:03:18.551 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:05:41.233 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:05:42.038 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 14:05:42.069 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 14:05:42.127 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:05:42.211 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 14:05:57.456 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:05:57.473 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:06:53.939 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:06:54.776 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 14:06:54.803 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 14:06:54.862 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:06:54.951 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 14:07:10.921 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:07:10.939 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:07:37.391 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:07:38.211 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 14:07:38.242 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 14:07:38.289 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:07:38.406 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 14:07:52.411 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:07:52.426 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:10:08.165 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:10:09.087 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 14:10:09.141 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 14:10:09.188 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:10:09.277 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 14:10:23.336 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:10:23.393 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:10:23.405 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:12:21.696 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:12:22.514 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 14:12:22.556 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 14:12:22.603 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:12:22.714 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 14:12:36.598 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:12:36.617 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:12:36.636 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:14:57.356 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:14:58.186 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 14:14:58.218 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 14:14:58.265 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:14:58.357 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 14:15:12.282 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:15:12.331 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:15:12.340 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:16:00.925 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:16:01.757 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 14:16:01.797 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 14:16:01.835 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:16:01.928 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 14:16:15.847 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:16:15.898 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:16:15.908 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:19:54.113 [http-nio-8080-exec-7] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client2@example.com
+2025-10-16 14:19:54.117 [http-nio-8080-exec-7] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
+2025-10-16 14:20:01.559 [http-nio-8080-exec-1] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Вихід користувача з системи'. Контекст: [користувач=2, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.logout(..)
+2025-10-16 14:20:11.722 [http-nio-8080-exec-4] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: admin@email.com
+2025-10-16 14:20:11.722 [http-nio-8080-exec-4] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
+2025-10-16 14:20:43.299 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:20:44.088 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 14:20:44.123 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 14:20:44.167 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:20:44.256 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 14:20:58.550 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:20:58.602 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:20:58.616 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:21:42.498 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:21:43.336 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 14:21:43.372 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 14:21:43.419 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:21:43.497 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 14:21:57.838 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:21:57.896 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:21:57.912 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:23:50.941 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:23:51.743 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 14:23:51.775 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 14:23:51.829 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:23:51.924 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 14:24:06.099 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:24:06.154 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:24:06.167 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:24:06.223 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:24:06.243 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:25:54.190 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:25:55.008 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 14:25:55.039 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 14:25:55.118 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:25:55.213 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 14:26:09.830 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:26:09.885 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:26:09.896 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:26:09.958 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:26:09.970 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:27:27.003 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:27:27.761 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 14:27:27.803 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 14:27:27.847 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:27:27.940 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 14:27:42.043 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:27:42.098 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:27:42.110 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:27:42.177 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:27:42.190 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:29:18.872 [http-nio-8080-exec-7] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Вихід користувача з системи'. Контекст: [користувач=11, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.logout(..)
+2025-10-16 14:29:31.571 [http-nio-8080-exec-2] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@email.com
+2025-10-16 14:29:31.572 [http-nio-8080-exec-2] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=anonymousUser, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
+2025-10-16 14:29:36.966 [http-nio-8080-exec-4] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client2@example.com
+2025-10-16 14:29:36.966 [http-nio-8080-exec-4] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Спроба входу користувача'. Контекст: [користувач=1, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.login(..)
+2025-10-16 14:31:39.361 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:31:40.238 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 14:31:40.273 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 14:31:40.312 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:31:40.403 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 14:31:54.669 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:31:54.723 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:31:54.737 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:31:54.797 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:31:54.809 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:32:48.020 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:32:48.811 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 14:32:48.844 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 14:32:48.885 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:32:48.964 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 14:33:03.324 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:33:03.379 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:33:03.392 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:33:03.463 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:33:03.467 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:33:44.491 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:33:45.354 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 14:33:45.386 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 14:33:45.441 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:33:45.524 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 14:34:00.047 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:34:00.095 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:34:00.108 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:34:00.176 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:34:00.184 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:35:05.313 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:35:06.167 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 14:35:06.199 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 14:35:06.236 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:35:06.347 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 14:35:20.245 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:35:20.299 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:35:20.315 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:35:20.364 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:35:20.380 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:36:17.272 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:36:18.153 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 14:36:18.200 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 14:36:18.232 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:36:18.326 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 14:36:32.764 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:36:32.821 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:36:32.830 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:37:28.591 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:37:29.439 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 14:37:29.476 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 14:37:29.518 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:37:29.597 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 14:37:44.386 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:37:44.443 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:37:44.459 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:37:44.516 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:37:44.528 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:40:15.749 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:40:16.591 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 14:40:16.631 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 14:40:16.662 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:40:16.772 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 14:40:32.642 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:40:32.694 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:40:32.704 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:40:32.762 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:40:32.773 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:41:51.404 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:41:52.181 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 14:41:52.215 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 14:41:52.262 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:41:52.341 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 14:42:09.113 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:42:09.178 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:42:09.188 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:42:09.255 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:42:09.270 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:43:26.215 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:43:27.141 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 14:43:27.178 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 14:43:27.212 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 14:43:27.306 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 14:43:41.557 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:43:41.604 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 14:43:41.622 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:43:41.683 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 14:43:41.695 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 18:19:43.737 [http-nio-8080-exec-8] WARN  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Вихід користувача з системи'. Контекст: [користувач=2, ip=0:0:0:0:0:0:0:1]. Метод: AuthController.logout(..)
+2025-10-16 18:27:42.883 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 18:27:43.995 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для клієнта: client@example.com
+2025-10-16 18:27:44.046 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для співробітника: employee@example.com
+2025-10-16 18:27:44.096 [main] INFO  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Успішний вхід для співробітника: employee@example.com
+2025-10-16 18:27:44.209 [main] WARN  c.e.r.a.s.p.c.AuthController - [SECURITY EVENT] Невдала спроба входу (неправильний пароль) для клієнта: client@example.com
+2025-10-16 18:28:05.476 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 18:28:05.630 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор виконує пошук серед замовлень'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.search(..)
+2025-10-16 18:28:05.679 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 18:28:05.863 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)
+2025-10-16 18:28:05.882 [main] INFO  c.e.r.a.s.p.a.StructuredLoggingAspect - [SECURITY EVENT] Успіх: 'Адміністратор переглядає всі замовлення'. Контекст: [користувач=1, ip=127.0.0.1]. Метод: OrderController.getAllOrders(..)

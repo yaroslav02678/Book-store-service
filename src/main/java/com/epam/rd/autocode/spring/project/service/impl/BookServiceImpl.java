@@ -8,10 +8,15 @@ import com.epam.rd.autocode.spring.project.model.Book;
 import com.epam.rd.autocode.spring.project.repo.BookRepository;
 import com.epam.rd.autocode.spring.project.service.BookService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 @Service
 public class BookServiceImpl implements BookService {
@@ -75,6 +80,12 @@ public class BookServiceImpl implements BookService {
         Book entity = modelMapper.map(bookDTO, Book.class);
         Book savedEntity = bookRepository.save(entity);
         return modelMapper.map(savedEntity, BookDTO.class);
+    }
+
+    @Override
+    public List<BookDTO> findAllBooks() {
+        List<Book> books = bookRepository.findAll();
+        return Collections.singletonList(modelMapper.map(books, BookDTO.class));
     }
 }
 

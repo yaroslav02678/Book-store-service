@@ -21,22 +21,22 @@ public class EmployeeController {
         this.employeeService = employeeService;
     }
 
-    @GetMapping
-    @PreAuthorize("hasAnyRole('ADMIN')")
-    public String getAllEmployees(@RequestParam(defaultValue = "0") int pages,
-                                  @RequestParam(defaultValue = "10") int size,
-                                  Model model) {
-        model.addAttribute("employees", employeeService.getAllEmployees(PageRequest.of(pages, size)));
-        return "employees/list";
-    }
+//    @GetMapping
+//    @PreAuthorize("hasAnyRole('ADMIN')")
+//    public String getAllEmployees(@RequestParam(defaultValue = "0") int pages,
+//                                  @RequestParam(defaultValue = "10") int size,
+//                                  Model model) {
+//        model.addAttribute("employees", employeeService.getAllEmployees(PageRequest.of(pages, size)));
+//        return "employees/list";
+//    }
 
-    @GetMapping("/{id}")
-    @PreAuthorize("hasAnyRole('ADMIN')")
-    public String getEmployeeByEmail(@PathVariable Long id, Model model) {
-        EmployeeDTO employee = employeeService.getEmployeetById(id);
-        model.addAttribute("employee", employee);
-        return "employees/detail-by-email";
-    }
+//    @GetMapping("/{id}")
+//    @PreAuthorize("hasAnyRole('ADMIN')")
+//    public String getEmployeeByEmail(@PathVariable Long id, Model model) {
+//        EmployeeDTO employee = employeeService.getEmployeetById(id);
+//        model.addAttribute("employee", employee);
+//        return "employees/detail-by-email";
+//    }
 
     @PostMapping("/add")
     @PreAuthorize("hasAnyRole('ADMIN')")

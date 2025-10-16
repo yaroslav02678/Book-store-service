@@ -40,7 +40,7 @@ public class AuthController {
     private final ClientRepository clientRepo;
     private final JwtUtils jwtUtils;
     private final PasswordEncoder passwordEncoder;
-    private RegistrationService registrationService;
+    private final RegistrationService registrationService;
 
     private static final Logger logger = LoggerFactory.getLogger(AuthController.class);
 
@@ -78,7 +78,7 @@ public class AuthController {
                 setCookies(response, accessToken, refreshToken);
                 logger.info("[SECURITY EVENT] Успішний вхід для співробітника: {}", email);
 
-                if (redirect != null && !redirect.isEmpty()) {
+                if (!redirect.isEmpty()) {
                     return "redirect:" + redirect;
                 }
                 return "redirect:/books";
@@ -97,7 +97,7 @@ public class AuthController {
                 setCookies(response, accessToken, refreshToken);
                 logger.info("[SECURITY EVENT] Успішний вхід для клієнта: {}", email);
 
-                if (redirect != null && !redirect.isEmpty()) {
+                if (!redirect.isEmpty()) {
                     return "redirect:" + redirect;
                 }
                 return "redirect:/books";
